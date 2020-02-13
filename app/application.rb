@@ -11,7 +11,9 @@ class Application
         resp.write "#{item}\n"
       end
     elsif req.path.match(/search/)
+      # re.path.match checks if the term in /string/ is found in the path
       search_term = req.params["q"]
+      # params grabs items that match the arguement in [] to the key in the hash
       resp.write handle_search(search_term)
     elsif req.path.match(/cart/)
       @@cart.each do |items|
