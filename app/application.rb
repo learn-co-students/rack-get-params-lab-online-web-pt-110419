@@ -9,6 +9,7 @@ class Application
     if re.path.match(/items/)
       @@cart.each do |cart|
         resp.write "#{cart}\n"
+      end
       else
         resp.write "Your cart is empty"
     end
