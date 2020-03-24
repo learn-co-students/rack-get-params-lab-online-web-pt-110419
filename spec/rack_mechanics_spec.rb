@@ -1,5 +1,6 @@
 require_relative './spec_helper'
 
+
 describe "Shopping Cart Rack App" do
   def app()
     Application.new
@@ -25,6 +26,7 @@ describe "Shopping Cart Rack App" do
       get '/add?item=Figs'
       expect(last_response.body).to include("added Figs")
       expect(Application.class_variable_get(:@@cart)).to include("Figs")
+
     end
 
     it 'Will not add an item that is not in the @@items list' do
